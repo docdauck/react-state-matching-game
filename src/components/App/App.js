@@ -17,7 +17,7 @@ class App extends Component {
     };
   }
 
-  startGame() {
+  startGame = () => {
     this.setState((state) => {
       return {
         playing: true,
@@ -26,9 +26,9 @@ class App extends Component {
         tiles: createTiles(state.numTiles, this.handleTileClicked),
       };
     });
-  }
+  };
 
-  handleTileClicked(id, color) {
+  handleTileClicked = (id, color) => {
     this.setState((state) => {
       const tiles = state.tiles;
       let { toBeCleared, previousTileIndex } = state;
@@ -62,11 +62,11 @@ class App extends Component {
 
       return { tiles, toBeCleared, previousTileIndex };
     });
-  }
+  };
 
-  handleNumTileChange(num) {
+  handleNumTileChange = (num) => {
     this.setState({ numTiles: num, playing: false, tiles: [] });
-  }
+  };
 
   render() {
     return (
